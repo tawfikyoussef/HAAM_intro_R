@@ -1,0 +1,107 @@
+---
+title: "Introduction to R for Data Exploration and Plotting"
+subtitle: "Answer key"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Setup
+
+```{r}
+data(iris)
+library(tidyverse)
+iris_df <- iris
+```
+
+## Exercise 1
+
+Create a vector called `ages` containing five ages. Then calculate the mean age.
+
+```{r}
+ages <- c(18, 21, 25, 30, 34)
+mean(ages)
+```
+
+## Exercise 2
+
+Using base R:
+
+1. Show only rows where `Species` is `versicolor`.
+2. Show only the columns `Sepal.Length`, `Petal.Length`, and `Species`.
+
+```{r}
+iris[iris$Species == "versicolor", ]
+
+iris[, c("Sepal.Length", "Petal.Length", "Species")]
+```
+
+## Exercise 3
+
+Using tidyverse, calculate the mean `Sepal.Length` and mean `Petal.Length` for each species.
+
+```{r}
+iris_df %>%
+  dplyr::group_by(Species) %>%
+  dplyr::summarise(
+    mean_sepal_length = mean(Sepal.Length),
+    mean_petal_length = mean(Petal.Length)
+  )
+```
+
+## Exercise 4
+
+Make a scatter plot with:
+
+1. `Sepal.Length` on the x-axis.
+2. `Sepal.Width` on the y-axis.
+3. Points colored by `Species`.
+4. A clean theme using `theme_bw()`.
+5. Clear axis labels.
+
+```{r}
+ggplot(data = iris_df, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 3) +
+  labs(
+    x = "Sepal length",
+    y = "Sepal width",
+    color = "Species"
+  ) +
+  theme_bw()
+```
+
+## Final challenge
+
+Complete the following workflow:
+
+1. Remove `setosa`.
+2. Create a new column called `Petal.Ratio`, calculated as `Petal.Length / Petal.Width`.
+3. Calculate the mean `Petal.Ratio` for each species.
+4. Make a boxplot of `Petal.Ratio` by species.
+
+```{r}
+iris_df2 <- iris_df %>%
+  dplyr::filter(Species != "setosa") %>%
+  dplyr::mutate(
+    Petal.Ratio = Petal.Length / Petal.Width
+  )
+
+iris_df2 %>%
+  dplyr::group_by(Species) %>%
+  dplyr::summarise(
+    mean_petal_ratio = mean(Petal.Ratio)
+  )
+
+ggplot(iris_df2, aes(x = Species, y = Petal.Ratio, fill = Species)) +
+  geom_boxplot() +
+  labs(
+    x = "Species",
+    y = "Petal length / petal width"
+  ) +
+  theme_bw()
+```
