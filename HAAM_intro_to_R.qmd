@@ -6,7 +6,7 @@ format:
     toc: true
     toc-depth: 2
     code-fold: false
-    code-tools: true
+    code-tools: false
 editor: visual
 execute:
   echo: true
@@ -40,6 +40,8 @@ sqrt(25)
 We can save values as objects using `<-`.
 
 ```{r}
+#| output: false
+
 x <- 10
 x
 
