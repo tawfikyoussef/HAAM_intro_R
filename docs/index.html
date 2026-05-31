@@ -146,15 +146,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
+  <ul>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">1. Objectives</a></li>
+  <li><a href="#getting-started-with-r-rstudio" id="toc-getting-started-with-r-rstudio" class="nav-link" data-scroll-target="#getting-started-with-r-rstudio">2. Getting started with R &amp; RStudio</a>
   <ul class="collapse">
-  <li><a href="#workshop-goals" id="toc-workshop-goals" class="nav-link active" data-scroll-target="#workshop-goals">Workshop goals</a></li>
-  <li><a href="#getting-started-with-r" id="toc-getting-started-with-r" class="nav-link" data-scroll-target="#getting-started-with-r">1. Getting started with R</a></li>
-  <li><a href="#working-with-a-data-frame" id="toc-working-with-a-data-frame" class="nav-link" data-scroll-target="#working-with-a-data-frame">2. Working with a data frame</a></li>
-  <li><a href="#data-manipulation-with-tidyverse" id="toc-data-manipulation-with-tidyverse" class="nav-link" data-scroll-target="#data-manipulation-with-tidyverse">3. Data manipulation with tidyverse</a></li>
-  <li><a href="#plotting-with-ggplot2" id="toc-plotting-with-ggplot2" class="nav-link" data-scroll-target="#plotting-with-ggplot2">4. Plotting with ggplot2</a></li>
-  <li><a href="#saving-a-plot" id="toc-saving-a-plot" class="nav-link" data-scroll-target="#saving-a-plot">5. Saving a plot</a></li>
-  <li><a href="#final-challenge" id="toc-final-challenge" class="nav-link" data-scroll-target="#final-challenge">6. Final challenge</a></li>
-  <li><a href="#key-take-home-messages" id="toc-key-take-home-messages" class="nav-link" data-scroll-target="#key-take-home-messages">7. Key take-home messages</a></li>
+  <li><a href="#what-is-r" id="toc-what-is-r" class="nav-link" data-scroll-target="#what-is-r">What is R?</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a></li>
+  <li><a href="#working-in-rstudio" id="toc-working-in-rstudio" class="nav-link" data-scroll-target="#working-in-rstudio">Working in RStudio</a></li>
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  </ul></li>
+  <li><a href="#working-with-a-data-frame" id="toc-working-with-a-data-frame" class="nav-link" data-scroll-target="#working-with-a-data-frame">3. Working with a data frame</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  </ul></li>
+  <li><a href="#reading-loading-and-writing-saving-files" id="toc-reading-loading-and-writing-saving-files" class="nav-link" data-scroll-target="#reading-loading-and-writing-saving-files">4. Reading (loading) and writing (saving) files</a></li>
+  <li><a href="#data-manipulation-with-tidyverse" id="toc-data-manipulation-with-tidyverse" class="nav-link" data-scroll-target="#data-manipulation-with-tidyverse">5. Data manipulation with tidyverse</a>
+  <ul class="collapse">
+  <li><a href="#filtering-rows" id="toc-filtering-rows" class="nav-link" data-scroll-target="#filtering-rows">Filtering rows</a></li>
+  <li><a href="#selecting-specific-columns" id="toc-selecting-specific-columns" class="nav-link" data-scroll-target="#selecting-specific-columns">Selecting specific columns</a></li>
+  <li><a href="#creating-new-columns" id="toc-creating-new-columns" class="nav-link" data-scroll-target="#creating-new-columns">Creating new columns</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  </ul></li>
+  <li><a href="#plotting-with-ggplot2" id="toc-plotting-with-ggplot2" class="nav-link" data-scroll-target="#plotting-with-ggplot2">6. Plotting with ggplot2</a>
+  <ul class="collapse">
+  <li><a href="#a-basic-scatter-plot" id="toc-a-basic-scatter-plot" class="nav-link" data-scroll-target="#a-basic-scatter-plot">A basic scatter plot</a></li>
+  <li><a href="#color-points-by-species" id="toc-color-points-by-species" class="nav-link" data-scroll-target="#color-points-by-species">Color points by species</a></li>
+  <li><a href="#improve-the-plot-appearance" id="toc-improve-the-plot-appearance" class="nav-link" data-scroll-target="#improve-the-plot-appearance">Improve the plot appearance</a></li>
+  <li><a href="#a-boxplot" id="toc-a-boxplot" class="nav-link" data-scroll-target="#a-boxplot">A boxplot</a></li>
+  <li><a href="#combining-dplyr-and-ggplot2" id="toc-combining-dplyr-and-ggplot2" class="nav-link" data-scroll-target="#combining-dplyr-and-ggplot2">Combining dplyr and ggplot2</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  </ul></li>
+  <li><a href="#saving-a-plot" id="toc-saving-a-plot" class="nav-link" data-scroll-target="#saving-a-plot">7. Saving a plot</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">8. Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -186,1159 +209,247 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="workshop-goals" class="level2">
-<h2 class="anchored" data-anchor-id="workshop-goals">Workshop goals</h2>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">1. Objectives</h2>
 <p>By the end of this session, you should be able to:</p>
 <ol type="1">
 <li>Run simple R commands in RStudio.</li>
 <li>Understand objects, functions, vectors, and data frames.</li>
 <li>Inspect and subset a dataset using base R.</li>
 <li>Read (load) and write (save) files/datasets.</li>
-<li>Use basic <code>dplyr</code> commands to filter, select, mutate, group, and summarise data.</li>
-<li>Create simple plots using <code>ggplot2</code>.</li>
+<li>Use basic <code>dplyr</code> commands to filter and subset data.</li>
+<li>Create plots using <code>ggplot2</code>.</li>
 <li>Save a plot as an image file.</li>
 </ol>
-<p>We will use the built-in <code>iris</code> dataset, so no external data files are needed.</p>
 </section>
-<section id="getting-started-with-r" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started-with-r">1. Getting started with R</h2>
+<section id="getting-started-with-r-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started-with-r-rstudio">2. Getting started with R &amp; RStudio</h2>
+<section id="what-is-r" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-r">What is R?</h3>
+<p>R is a language and environment for statistical programming which includes statistical computing and graphics.</p>
+</section>
+<section id="rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="rstudio">RStudio</h3>
+<p>It is an integrated development environment (IDE) for the R programming language.</p>
+<p><em>We will now open RStudio and learn how to navigate it and use R in it.</em></p>
+</section>
+<section id="working-in-rstudio" class="level3">
+<h3 class="anchored" data-anchor-id="working-in-rstudio">Working in RStudio</h3>
 <p>R can be used like a calculator.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">/</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">25</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can save values as objects using <code>&lt;-</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 15</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="sc">+</span> <span class="dv">5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A vector is a collection of values.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>numbers</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 2 3 4 5</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>numbers</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(numbers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3</code></pre>
+<p>A function is a command with input(s).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(numbers)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(numbers)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(numbers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(numbers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.581139</code></pre>
+<p>You can check what a function does, what kind of input it requires, and what kind of output it produces using <code>?</code></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>?mean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(numbers)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5</code></pre>
-</div>
-</div>
+</section>
 <section id="exercise-1" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-1">Exercise 1</h3>
-<p>Create a vector called <code>ages</code> containing five ages. Then calculate the mean age.</p>
+<p>Now, create a vector called <code>ages</code> containing the values: 18, 22, 26, 28, 32. Calculate the mean age.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">21</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">34</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ages)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 25.6</code></pre>
-</div>
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">22</span>, <span class="dv">26</span>, <span class="dv">28</span>, <span class="dv">32</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(ages) <span class="co"># = 25.2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 </section>
 <section id="working-with-a-data-frame" class="level2">
-<h2 class="anchored" data-anchor-id="working-with-a-data-frame">2. Working with a data frame</h2>
-<p>A data frame is a table. Rows are observations and columns are variables.</p>
-<p>We will use the built-in <code>iris</code> dataset.</p>
+<h2 class="anchored" data-anchor-id="working-with-a-data-frame">3. Working with a data frame</h2>
+<p>You can think of a data frame as a table with rows (observations) and columns (variables).</p>
+<p>We will use the built-in <code>iris</code> dataset. We will first load it:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Inspect the dataset.</p>
+<p>Now, let’s inspect the dataset.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-1          5.1         3.5          1.4         0.2  setosa
-2          4.9         3.0          1.4         0.2  setosa
-3          4.7         3.2          1.3         0.2  setosa
-4          4.6         3.1          1.5         0.2  setosa
-5          5.0         3.6          1.4         0.2  setosa
-6          5.4         3.9          1.7         0.4  setosa</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   150 obs. of  5 variables:
- $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
- $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
- $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
- $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
- $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Sepal.Length    Sepal.Width     Petal.Length    Petal.Width   
- Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
- 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
- Median :5.800   Median :3.000   Median :4.350   Median :1.300  
- Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
- 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
- Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
-       Species  
- setosa    :50  
- versicolor:50  
- virginica :50  
-                
-                
-                </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 150   5</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Sepal.Length" "Sepal.Width"  "Petal.Length" "Petal.Width"  "Species"     </code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># show the first few lines</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># show structure of the data frame</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(iris)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># show summary of the data frame</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iris)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># show dimmensions of the data frame</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(iris)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># show the column names of the data frame</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The dataset has measurements from three iris species.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(iris<span class="sc">$</span>Species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] setosa     versicolor virginica 
-Levels: setosa versicolor virginica</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(iris<span class="sc">$</span>Species)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can access one column using <code>$</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Petal.Length</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  [1] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 1.5 1.6 1.4 1.1 1.2 1.5 1.3 1.4
- [19] 1.7 1.5 1.7 1.5 1.0 1.7 1.9 1.6 1.6 1.5 1.4 1.6 1.6 1.5 1.5 1.4 1.5 1.2
- [37] 1.3 1.4 1.3 1.5 1.3 1.3 1.3 1.6 1.9 1.4 1.6 1.4 1.5 1.4 4.7 4.5 4.9 4.0
- [55] 4.6 4.5 4.7 3.3 4.6 3.9 3.5 4.2 4.0 4.7 3.6 4.4 4.5 4.1 4.5 3.9 4.8 4.0
- [73] 4.9 4.7 4.3 4.4 4.8 5.0 4.5 3.5 3.8 3.7 3.9 5.1 4.5 4.5 4.7 4.4 4.1 4.0
- [91] 4.4 4.6 4.0 3.3 4.2 4.2 4.2 4.3 3.0 4.1 6.0 5.1 5.9 5.6 5.8 6.6 4.5 6.3
-[109] 5.8 6.1 5.1 5.3 5.5 5.0 5.1 5.3 5.5 6.7 6.9 5.0 5.7 4.9 6.7 4.9 5.7 6.0
-[127] 4.8 4.9 5.6 5.8 6.1 6.4 5.6 5.1 5.6 6.1 5.6 5.5 4.8 5.4 5.6 5.1 5.1 5.9
-[145] 5.7 5.2 5.0 5.2 5.4 5.1</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>iris<span class="sc">$</span>Petal.Length</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>We can subset rows and columns using square brackets.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First five rows</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-1          5.1         3.5          1.4         0.2  setosa
-2          4.9         3.0          1.4         0.2  setosa
-3          4.7         3.2          1.3         0.2  setosa
-4          4.6         3.1          1.5         0.2  setosa
-5          5.0         3.6          1.4         0.2  setosa</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First five rows</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, ]</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Rows where Species is setosa</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span>, ]</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Rows where Petal.Length is greater than 5</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Petal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, ]</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Select specific columns</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>iris[, <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Petal.Length"</span>, <span class="st">"Petal.Width"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rows where Species is setosa</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"setosa"</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-1           5.1         3.5          1.4         0.2  setosa
-2           4.9         3.0          1.4         0.2  setosa
-3           4.7         3.2          1.3         0.2  setosa
-4           4.6         3.1          1.5         0.2  setosa
-5           5.0         3.6          1.4         0.2  setosa
-6           5.4         3.9          1.7         0.4  setosa
-7           4.6         3.4          1.4         0.3  setosa
-8           5.0         3.4          1.5         0.2  setosa
-9           4.4         2.9          1.4         0.2  setosa
-10          4.9         3.1          1.5         0.1  setosa
-11          5.4         3.7          1.5         0.2  setosa
-12          4.8         3.4          1.6         0.2  setosa
-13          4.8         3.0          1.4         0.1  setosa
-14          4.3         3.0          1.1         0.1  setosa
-15          5.8         4.0          1.2         0.2  setosa
-16          5.7         4.4          1.5         0.4  setosa
-17          5.4         3.9          1.3         0.4  setosa
-18          5.1         3.5          1.4         0.3  setosa
-19          5.7         3.8          1.7         0.3  setosa
-20          5.1         3.8          1.5         0.3  setosa
-21          5.4         3.4          1.7         0.2  setosa
-22          5.1         3.7          1.5         0.4  setosa
-23          4.6         3.6          1.0         0.2  setosa
-24          5.1         3.3          1.7         0.5  setosa
-25          4.8         3.4          1.9         0.2  setosa
-26          5.0         3.0          1.6         0.2  setosa
-27          5.0         3.4          1.6         0.4  setosa
-28          5.2         3.5          1.5         0.2  setosa
-29          5.2         3.4          1.4         0.2  setosa
-30          4.7         3.2          1.6         0.2  setosa
-31          4.8         3.1          1.6         0.2  setosa
-32          5.4         3.4          1.5         0.4  setosa
-33          5.2         4.1          1.5         0.1  setosa
-34          5.5         4.2          1.4         0.2  setosa
-35          4.9         3.1          1.5         0.2  setosa
-36          5.0         3.2          1.2         0.2  setosa
-37          5.5         3.5          1.3         0.2  setosa
-38          4.9         3.6          1.4         0.1  setosa
-39          4.4         3.0          1.3         0.2  setosa
-40          5.1         3.4          1.5         0.2  setosa
-41          5.0         3.5          1.3         0.3  setosa
-42          4.5         2.3          1.3         0.3  setosa
-43          4.4         3.2          1.3         0.2  setosa
-44          5.0         3.5          1.6         0.6  setosa
-45          5.1         3.8          1.9         0.4  setosa
-46          4.8         3.0          1.4         0.3  setosa
-47          5.1         3.8          1.6         0.2  setosa
-48          4.6         3.2          1.4         0.2  setosa
-49          5.3         3.7          1.5         0.2  setosa
-50          5.0         3.3          1.4         0.2  setosa</code></pre>
+<p>We can also add new columns to our data frame.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>iris[,<span class="dv">6</span>] <span class="ot">&lt;-</span> iris<span class="sc">$</span>Petal.Length <span class="sc">/</span> iris<span class="sc">$</span>Petal.Width</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rows where Petal.Length is greater than 5</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Petal.Length <span class="sc">&gt;</span> <span class="dv">5</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-84           6.0         2.7          5.1         1.6 versicolor
-101          6.3         3.3          6.0         2.5  virginica
-102          5.8         2.7          5.1         1.9  virginica
-103          7.1         3.0          5.9         2.1  virginica
-104          6.3         2.9          5.6         1.8  virginica
-105          6.5         3.0          5.8         2.2  virginica
-106          7.6         3.0          6.6         2.1  virginica
-108          7.3         2.9          6.3         1.8  virginica
-109          6.7         2.5          5.8         1.8  virginica
-110          7.2         3.6          6.1         2.5  virginica
-111          6.5         3.2          5.1         2.0  virginica
-112          6.4         2.7          5.3         1.9  virginica
-113          6.8         3.0          5.5         2.1  virginica
-115          5.8         2.8          5.1         2.4  virginica
-116          6.4         3.2          5.3         2.3  virginica
-117          6.5         3.0          5.5         1.8  virginica
-118          7.7         3.8          6.7         2.2  virginica
-119          7.7         2.6          6.9         2.3  virginica
-121          6.9         3.2          5.7         2.3  virginica
-123          7.7         2.8          6.7         2.0  virginica
-125          6.7         3.3          5.7         2.1  virginica
-126          7.2         3.2          6.0         1.8  virginica
-129          6.4         2.8          5.6         2.1  virginica
-130          7.2         3.0          5.8         1.6  virginica
-131          7.4         2.8          6.1         1.9  virginica
-132          7.9         3.8          6.4         2.0  virginica
-133          6.4         2.8          5.6         2.2  virginica
-134          6.3         2.8          5.1         1.5  virginica
-135          6.1         2.6          5.6         1.4  virginica
-136          7.7         3.0          6.1         2.3  virginica
-137          6.3         3.4          5.6         2.4  virginica
-138          6.4         3.1          5.5         1.8  virginica
-140          6.9         3.1          5.4         2.1  virginica
-141          6.7         3.1          5.6         2.4  virginica
-142          6.9         3.1          5.1         2.3  virginica
-143          5.8         2.7          5.1         1.9  virginica
-144          6.8         3.2          5.9         2.3  virginica
-145          6.7         3.3          5.7         2.5  virginica
-146          6.7         3.0          5.2         2.3  virginica
-148          6.5         3.0          5.2         2.0  virginica
-149          6.2         3.4          5.4         2.3  virginica
-150          5.9         3.0          5.1         1.8  virginica</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Select specific columns</span></span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>iris[, <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Petal.Length"</span>, <span class="st">"Petal.Width"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       Species Petal.Length Petal.Width
-1       setosa          1.4         0.2
-2       setosa          1.4         0.2
-3       setosa          1.3         0.2
-4       setosa          1.5         0.2
-5       setosa          1.4         0.2
-6       setosa          1.7         0.4
-7       setosa          1.4         0.3
-8       setosa          1.5         0.2
-9       setosa          1.4         0.2
-10      setosa          1.5         0.1
-11      setosa          1.5         0.2
-12      setosa          1.6         0.2
-13      setosa          1.4         0.1
-14      setosa          1.1         0.1
-15      setosa          1.2         0.2
-16      setosa          1.5         0.4
-17      setosa          1.3         0.4
-18      setosa          1.4         0.3
-19      setosa          1.7         0.3
-20      setosa          1.5         0.3
-21      setosa          1.7         0.2
-22      setosa          1.5         0.4
-23      setosa          1.0         0.2
-24      setosa          1.7         0.5
-25      setosa          1.9         0.2
-26      setosa          1.6         0.2
-27      setosa          1.6         0.4
-28      setosa          1.5         0.2
-29      setosa          1.4         0.2
-30      setosa          1.6         0.2
-31      setosa          1.6         0.2
-32      setosa          1.5         0.4
-33      setosa          1.5         0.1
-34      setosa          1.4         0.2
-35      setosa          1.5         0.2
-36      setosa          1.2         0.2
-37      setosa          1.3         0.2
-38      setosa          1.4         0.1
-39      setosa          1.3         0.2
-40      setosa          1.5         0.2
-41      setosa          1.3         0.3
-42      setosa          1.3         0.3
-43      setosa          1.3         0.2
-44      setosa          1.6         0.6
-45      setosa          1.9         0.4
-46      setosa          1.4         0.3
-47      setosa          1.6         0.2
-48      setosa          1.4         0.2
-49      setosa          1.5         0.2
-50      setosa          1.4         0.2
-51  versicolor          4.7         1.4
-52  versicolor          4.5         1.5
-53  versicolor          4.9         1.5
-54  versicolor          4.0         1.3
-55  versicolor          4.6         1.5
-56  versicolor          4.5         1.3
-57  versicolor          4.7         1.6
-58  versicolor          3.3         1.0
-59  versicolor          4.6         1.3
-60  versicolor          3.9         1.4
-61  versicolor          3.5         1.0
-62  versicolor          4.2         1.5
-63  versicolor          4.0         1.0
-64  versicolor          4.7         1.4
-65  versicolor          3.6         1.3
-66  versicolor          4.4         1.4
-67  versicolor          4.5         1.5
-68  versicolor          4.1         1.0
-69  versicolor          4.5         1.5
-70  versicolor          3.9         1.1
-71  versicolor          4.8         1.8
-72  versicolor          4.0         1.3
-73  versicolor          4.9         1.5
-74  versicolor          4.7         1.2
-75  versicolor          4.3         1.3
-76  versicolor          4.4         1.4
-77  versicolor          4.8         1.4
-78  versicolor          5.0         1.7
-79  versicolor          4.5         1.5
-80  versicolor          3.5         1.0
-81  versicolor          3.8         1.1
-82  versicolor          3.7         1.0
-83  versicolor          3.9         1.2
-84  versicolor          5.1         1.6
-85  versicolor          4.5         1.5
-86  versicolor          4.5         1.6
-87  versicolor          4.7         1.5
-88  versicolor          4.4         1.3
-89  versicolor          4.1         1.3
-90  versicolor          4.0         1.3
-91  versicolor          4.4         1.2
-92  versicolor          4.6         1.4
-93  versicolor          4.0         1.2
-94  versicolor          3.3         1.0
-95  versicolor          4.2         1.3
-96  versicolor          4.2         1.2
-97  versicolor          4.2         1.3
-98  versicolor          4.3         1.3
-99  versicolor          3.0         1.1
-100 versicolor          4.1         1.3
-101  virginica          6.0         2.5
-102  virginica          5.1         1.9
-103  virginica          5.9         2.1
-104  virginica          5.6         1.8
-105  virginica          5.8         2.2
-106  virginica          6.6         2.1
-107  virginica          4.5         1.7
-108  virginica          6.3         1.8
-109  virginica          5.8         1.8
-110  virginica          6.1         2.5
-111  virginica          5.1         2.0
-112  virginica          5.3         1.9
-113  virginica          5.5         2.1
-114  virginica          5.0         2.0
-115  virginica          5.1         2.4
-116  virginica          5.3         2.3
-117  virginica          5.5         1.8
-118  virginica          6.7         2.2
-119  virginica          6.9         2.3
-120  virginica          5.0         1.5
-121  virginica          5.7         2.3
-122  virginica          4.9         2.0
-123  virginica          6.7         2.0
-124  virginica          4.9         1.8
-125  virginica          5.7         2.1
-126  virginica          6.0         1.8
-127  virginica          4.8         1.8
-128  virginica          4.9         1.8
-129  virginica          5.6         2.1
-130  virginica          5.8         1.6
-131  virginica          6.1         1.9
-132  virginica          6.4         2.0
-133  virginica          5.6         2.2
-134  virginica          5.1         1.5
-135  virginica          5.6         1.4
-136  virginica          6.1         2.3
-137  virginica          5.6         2.4
-138  virginica          5.5         1.8
-139  virginica          4.8         1.8
-140  virginica          5.4         2.1
-141  virginica          5.6         2.4
-142  virginica          5.1         2.3
-143  virginica          5.1         1.9
-144  virginica          5.9         2.3
-145  virginica          5.7         2.5
-146  virginica          5.2         2.3
-147  virginica          5.0         1.9
-148  virginica          5.2         2.0
-149  virginica          5.4         2.3
-150  virginica          5.1         1.8</code></pre>
-</div>
+<p>We can check and/or change column names of a data frame using <code>colnames()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)[<span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="st">"Petal.Ratio"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="exercise-2" class="level3">
 <h3 class="anchored" data-anchor-id="exercise-2">Exercise 2</h3>
-<p>Using base R:</p>
 <ol type="1">
 <li>Show only rows where <code>Species</code> is <code>versicolor</code>.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"versicolor"</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<ol start="2" type="1">
 <li>Show only the columns <code>Sepal.Length</code>, <code>Petal.Length</code>, and <code>Species</code>.</li>
 </ol>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>iris[iris<span class="sc">$</span>Species <span class="sc">==</span> <span class="st">"versicolor"</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-51           7.0         3.2          4.7         1.4 versicolor
-52           6.4         3.2          4.5         1.5 versicolor
-53           6.9         3.1          4.9         1.5 versicolor
-54           5.5         2.3          4.0         1.3 versicolor
-55           6.5         2.8          4.6         1.5 versicolor
-56           5.7         2.8          4.5         1.3 versicolor
-57           6.3         3.3          4.7         1.6 versicolor
-58           4.9         2.4          3.3         1.0 versicolor
-59           6.6         2.9          4.6         1.3 versicolor
-60           5.2         2.7          3.9         1.4 versicolor
-61           5.0         2.0          3.5         1.0 versicolor
-62           5.9         3.0          4.2         1.5 versicolor
-63           6.0         2.2          4.0         1.0 versicolor
-64           6.1         2.9          4.7         1.4 versicolor
-65           5.6         2.9          3.6         1.3 versicolor
-66           6.7         3.1          4.4         1.4 versicolor
-67           5.6         3.0          4.5         1.5 versicolor
-68           5.8         2.7          4.1         1.0 versicolor
-69           6.2         2.2          4.5         1.5 versicolor
-70           5.6         2.5          3.9         1.1 versicolor
-71           5.9         3.2          4.8         1.8 versicolor
-72           6.1         2.8          4.0         1.3 versicolor
-73           6.3         2.5          4.9         1.5 versicolor
-74           6.1         2.8          4.7         1.2 versicolor
-75           6.4         2.9          4.3         1.3 versicolor
-76           6.6         3.0          4.4         1.4 versicolor
-77           6.8         2.8          4.8         1.4 versicolor
-78           6.7         3.0          5.0         1.7 versicolor
-79           6.0         2.9          4.5         1.5 versicolor
-80           5.7         2.6          3.5         1.0 versicolor
-81           5.5         2.4          3.8         1.1 versicolor
-82           5.5         2.4          3.7         1.0 versicolor
-83           5.8         2.7          3.9         1.2 versicolor
-84           6.0         2.7          5.1         1.6 versicolor
-85           5.4         3.0          4.5         1.5 versicolor
-86           6.0         3.4          4.5         1.6 versicolor
-87           6.7         3.1          4.7         1.5 versicolor
-88           6.3         2.3          4.4         1.3 versicolor
-89           5.6         3.0          4.1         1.3 versicolor
-90           5.5         2.5          4.0         1.3 versicolor
-91           5.5         2.6          4.4         1.2 versicolor
-92           6.1         3.0          4.6         1.4 versicolor
-93           5.8         2.6          4.0         1.2 versicolor
-94           5.0         2.3          3.3         1.0 versicolor
-95           5.6         2.7          4.2         1.3 versicolor
-96           5.7         3.0          4.2         1.2 versicolor
-97           5.7         2.9          4.2         1.3 versicolor
-98           6.2         2.9          4.3         1.3 versicolor
-99           5.1         2.5          3.0         1.1 versicolor
-100          5.7         2.8          4.1         1.3 versicolor</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>iris[, <span class="fu">c</span>(<span class="st">"Sepal.Length"</span>, <span class="st">"Petal.Length"</span>, <span class="st">"Species"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Sepal.Length Petal.Length    Species
-1            5.1          1.4     setosa
-2            4.9          1.4     setosa
-3            4.7          1.3     setosa
-4            4.6          1.5     setosa
-5            5.0          1.4     setosa
-6            5.4          1.7     setosa
-7            4.6          1.4     setosa
-8            5.0          1.5     setosa
-9            4.4          1.4     setosa
-10           4.9          1.5     setosa
-11           5.4          1.5     setosa
-12           4.8          1.6     setosa
-13           4.8          1.4     setosa
-14           4.3          1.1     setosa
-15           5.8          1.2     setosa
-16           5.7          1.5     setosa
-17           5.4          1.3     setosa
-18           5.1          1.4     setosa
-19           5.7          1.7     setosa
-20           5.1          1.5     setosa
-21           5.4          1.7     setosa
-22           5.1          1.5     setosa
-23           4.6          1.0     setosa
-24           5.1          1.7     setosa
-25           4.8          1.9     setosa
-26           5.0          1.6     setosa
-27           5.0          1.6     setosa
-28           5.2          1.5     setosa
-29           5.2          1.4     setosa
-30           4.7          1.6     setosa
-31           4.8          1.6     setosa
-32           5.4          1.5     setosa
-33           5.2          1.5     setosa
-34           5.5          1.4     setosa
-35           4.9          1.5     setosa
-36           5.0          1.2     setosa
-37           5.5          1.3     setosa
-38           4.9          1.4     setosa
-39           4.4          1.3     setosa
-40           5.1          1.5     setosa
-41           5.0          1.3     setosa
-42           4.5          1.3     setosa
-43           4.4          1.3     setosa
-44           5.0          1.6     setosa
-45           5.1          1.9     setosa
-46           4.8          1.4     setosa
-47           5.1          1.6     setosa
-48           4.6          1.4     setosa
-49           5.3          1.5     setosa
-50           5.0          1.4     setosa
-51           7.0          4.7 versicolor
-52           6.4          4.5 versicolor
-53           6.9          4.9 versicolor
-54           5.5          4.0 versicolor
-55           6.5          4.6 versicolor
-56           5.7          4.5 versicolor
-57           6.3          4.7 versicolor
-58           4.9          3.3 versicolor
-59           6.6          4.6 versicolor
-60           5.2          3.9 versicolor
-61           5.0          3.5 versicolor
-62           5.9          4.2 versicolor
-63           6.0          4.0 versicolor
-64           6.1          4.7 versicolor
-65           5.6          3.6 versicolor
-66           6.7          4.4 versicolor
-67           5.6          4.5 versicolor
-68           5.8          4.1 versicolor
-69           6.2          4.5 versicolor
-70           5.6          3.9 versicolor
-71           5.9          4.8 versicolor
-72           6.1          4.0 versicolor
-73           6.3          4.9 versicolor
-74           6.1          4.7 versicolor
-75           6.4          4.3 versicolor
-76           6.6          4.4 versicolor
-77           6.8          4.8 versicolor
-78           6.7          5.0 versicolor
-79           6.0          4.5 versicolor
-80           5.7          3.5 versicolor
-81           5.5          3.8 versicolor
-82           5.5          3.7 versicolor
-83           5.8          3.9 versicolor
-84           6.0          5.1 versicolor
-85           5.4          4.5 versicolor
-86           6.0          4.5 versicolor
-87           6.7          4.7 versicolor
-88           6.3          4.4 versicolor
-89           5.6          4.1 versicolor
-90           5.5          4.0 versicolor
-91           5.5          4.4 versicolor
-92           6.1          4.6 versicolor
-93           5.8          4.0 versicolor
-94           5.0          3.3 versicolor
-95           5.6          4.2 versicolor
-96           5.7          4.2 versicolor
-97           5.7          4.2 versicolor
-98           6.2          4.3 versicolor
-99           5.1          3.0 versicolor
-100          5.7          4.1 versicolor
-101          6.3          6.0  virginica
-102          5.8          5.1  virginica
-103          7.1          5.9  virginica
-104          6.3          5.6  virginica
-105          6.5          5.8  virginica
-106          7.6          6.6  virginica
-107          4.9          4.5  virginica
-108          7.3          6.3  virginica
-109          6.7          5.8  virginica
-110          7.2          6.1  virginica
-111          6.5          5.1  virginica
-112          6.4          5.3  virginica
-113          6.8          5.5  virginica
-114          5.7          5.0  virginica
-115          5.8          5.1  virginica
-116          6.4          5.3  virginica
-117          6.5          5.5  virginica
-118          7.7          6.7  virginica
-119          7.7          6.9  virginica
-120          6.0          5.0  virginica
-121          6.9          5.7  virginica
-122          5.6          4.9  virginica
-123          7.7          6.7  virginica
-124          6.3          4.9  virginica
-125          6.7          5.7  virginica
-126          7.2          6.0  virginica
-127          6.2          4.8  virginica
-128          6.1          4.9  virginica
-129          6.4          5.6  virginica
-130          7.2          5.8  virginica
-131          7.4          6.1  virginica
-132          7.9          6.4  virginica
-133          6.4          5.6  virginica
-134          6.3          5.1  virginica
-135          6.1          5.6  virginica
-136          7.7          6.1  virginica
-137          6.3          5.6  virginica
-138          6.4          5.5  virginica
-139          6.0          4.8  virginica
-140          6.9          5.4  virginica
-141          6.7          5.6  virginica
-142          6.9          5.1  virginica
-143          5.8          5.1  virginica
-144          6.8          5.9  virginica
-145          6.7          5.7  virginica
-146          6.7          5.2  virginica
-147          6.3          5.0  virginica
-148          6.5          5.2  virginica
-149          6.2          5.4  virginica
-150          5.9          5.1  virginica</code></pre>
-</div>
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>iris[, <span class="fu">c</span>(<span class="st">"Sepal.Length"</span>, <span class="st">"Petal.Length"</span>, <span class="st">"Species"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
+</section>
+<section id="reading-loading-and-writing-saving-files" class="level2">
+<h2 class="anchored" data-anchor-id="reading-loading-and-writing-saving-files">4. Reading (loading) and writing (saving) files</h2>
+<p>When using R, we will always have input files that need to be loaded and/or output files that need to be saved.</p>
+<p>We will copy <code>iris</code> into an object called <code>iris_df</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="ot">&lt;-</span> iris</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You should always know where you are. We use <code>getwd()</code> to know current directory (folder) we are in.</p>
+<p>We use <code>setwd()</code> to set a new working directory (folder) to work in.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"/vol/volume/intro-to-r/"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We can check files inside current working directory using <code>list.files()</code></p>
+<p>Let’s now save the <code>iris</code> data frame into a text file.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(<span class="at">x =</span> iris_df, <span class="at">file =</span> <span class="st">"iris_df.tsv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Now, let’s remove the current <em>iris_df</em> and try to read (load) it from our working directory.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(iris_df)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>iris_df <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"iris_df.tsv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="data-manipulation-with-tidyverse" class="level2">
-<h2 class="anchored" data-anchor-id="data-manipulation-with-tidyverse">3. Data manipulation with tidyverse</h2>
+<h2 class="anchored" data-anchor-id="data-manipulation-with-tidyverse">5. Data manipulation with tidyverse</h2>
 <p>The tidyverse is a collection of R packages for data manipulation and plotting.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>For this workshop, we will copy <code>iris</code> into an object called <code>iris_df</code>.</p>
+<p>Let’s again print the first lines of the iris data frame.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="ot">&lt;-</span> iris</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>The pipe <code>%&gt;%</code> can be read as “then”.</p>
+<p>We can also use the pipe <code>%&gt;%</code> (which can be read as “then”). The syntax is simple: <em>object</em> <code>%&gt;%</code> <em>function</em></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-1          5.1         3.5          1.4         0.2  setosa
-2          4.9         3.0          1.4         0.2  setosa
-3          4.7         3.2          1.3         0.2  setosa
-4          4.6         3.1          1.5         0.2  setosa
-5          5.0         3.6          1.4         0.2  setosa
-6          5.4         3.9          1.7         0.4  setosa</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="filtering-rows" class="level3">
 <h3 class="anchored" data-anchor-id="filtering-rows">Filtering rows</h3>
+<p>We use <code>dplyr::filter()</code> and indicate what we want to subset our data frame with.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"setosa"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-1           5.1         3.5          1.4         0.2  setosa
-2           4.9         3.0          1.4         0.2  setosa
-3           4.7         3.2          1.3         0.2  setosa
-4           4.6         3.1          1.5         0.2  setosa
-5           5.0         3.6          1.4         0.2  setosa
-6           5.4         3.9          1.7         0.4  setosa
-7           4.6         3.4          1.4         0.3  setosa
-8           5.0         3.4          1.5         0.2  setosa
-9           4.4         2.9          1.4         0.2  setosa
-10          4.9         3.1          1.5         0.1  setosa
-11          5.4         3.7          1.5         0.2  setosa
-12          4.8         3.4          1.6         0.2  setosa
-13          4.8         3.0          1.4         0.1  setosa
-14          4.3         3.0          1.1         0.1  setosa
-15          5.8         4.0          1.2         0.2  setosa
-16          5.7         4.4          1.5         0.4  setosa
-17          5.4         3.9          1.3         0.4  setosa
-18          5.1         3.5          1.4         0.3  setosa
-19          5.7         3.8          1.7         0.3  setosa
-20          5.1         3.8          1.5         0.3  setosa
-21          5.4         3.4          1.7         0.2  setosa
-22          5.1         3.7          1.5         0.4  setosa
-23          4.6         3.6          1.0         0.2  setosa
-24          5.1         3.3          1.7         0.5  setosa
-25          4.8         3.4          1.9         0.2  setosa
-26          5.0         3.0          1.6         0.2  setosa
-27          5.0         3.4          1.6         0.4  setosa
-28          5.2         3.5          1.5         0.2  setosa
-29          5.2         3.4          1.4         0.2  setosa
-30          4.7         3.2          1.6         0.2  setosa
-31          4.8         3.1          1.6         0.2  setosa
-32          5.4         3.4          1.5         0.4  setosa
-33          5.2         4.1          1.5         0.1  setosa
-34          5.5         4.2          1.4         0.2  setosa
-35          4.9         3.1          1.5         0.2  setosa
-36          5.0         3.2          1.2         0.2  setosa
-37          5.5         3.5          1.3         0.2  setosa
-38          4.9         3.6          1.4         0.1  setosa
-39          4.4         3.0          1.3         0.2  setosa
-40          5.1         3.4          1.5         0.2  setosa
-41          5.0         3.5          1.3         0.3  setosa
-42          4.5         2.3          1.3         0.3  setosa
-43          4.4         3.2          1.3         0.2  setosa
-44          5.0         3.5          1.6         0.6  setosa
-45          5.1         3.8          1.9         0.4  setosa
-46          4.8         3.0          1.4         0.3  setosa
-47          5.1         3.8          1.6         0.2  setosa
-48          4.6         3.2          1.4         0.2  setosa
-49          5.3         3.7          1.5         0.2  setosa
-50          5.0         3.3          1.4         0.2  setosa</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Petal.Length <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-1           6.0         2.7          5.1         1.6 versicolor
-2           6.3         3.3          6.0         2.5  virginica
-3           5.8         2.7          5.1         1.9  virginica
-4           7.1         3.0          5.9         2.1  virginica
-5           6.3         2.9          5.6         1.8  virginica
-6           6.5         3.0          5.8         2.2  virginica
-7           7.6         3.0          6.6         2.1  virginica
-8           7.3         2.9          6.3         1.8  virginica
-9           6.7         2.5          5.8         1.8  virginica
-10          7.2         3.6          6.1         2.5  virginica
-11          6.5         3.2          5.1         2.0  virginica
-12          6.4         2.7          5.3         1.9  virginica
-13          6.8         3.0          5.5         2.1  virginica
-14          5.8         2.8          5.1         2.4  virginica
-15          6.4         3.2          5.3         2.3  virginica
-16          6.5         3.0          5.5         1.8  virginica
-17          7.7         3.8          6.7         2.2  virginica
-18          7.7         2.6          6.9         2.3  virginica
-19          6.9         3.2          5.7         2.3  virginica
-20          7.7         2.8          6.7         2.0  virginica
-21          6.7         3.3          5.7         2.1  virginica
-22          7.2         3.2          6.0         1.8  virginica
-23          6.4         2.8          5.6         2.1  virginica
-24          7.2         3.0          5.8         1.6  virginica
-25          7.4         2.8          6.1         1.9  virginica
-26          7.9         3.8          6.4         2.0  virginica
-27          6.4         2.8          5.6         2.2  virginica
-28          6.3         2.8          5.1         1.5  virginica
-29          6.1         2.6          5.6         1.4  virginica
-30          7.7         3.0          6.1         2.3  virginica
-31          6.3         3.4          5.6         2.4  virginica
-32          6.4         3.1          5.5         1.8  virginica
-33          6.9         3.1          5.4         2.1  virginica
-34          6.7         3.1          5.6         2.4  virginica
-35          6.9         3.1          5.1         2.3  virginica
-36          5.8         2.7          5.1         1.9  virginica
-37          6.8         3.2          5.9         2.3  virginica
-38          6.7         3.3          5.7         2.5  virginica
-39          6.7         3.0          5.2         2.3  virginica
-40          6.5         3.0          5.2         2.0  virginica
-41          6.2         3.4          5.4         2.3  virginica
-42          5.9         3.0          5.1         1.8  virginica</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter by specific value</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Species <span class="sc">==</span> <span class="st">"setosa"</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter by range</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Petal.Length <span class="sc">&gt;</span> <span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="selecting-columns" class="level3">
-<h3 class="anchored" data-anchor-id="selecting-columns">Selecting columns</h3>
+<section id="selecting-specific-columns" class="level3">
+<h3 class="anchored" data-anchor-id="selecting-specific-columns">Selecting specific columns</h3>
+<p>We use <code>dplyr::select()</code> and indicate which columns we want to subset from our data frame.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Species, Petal.Length, Petal.Width)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       Species Petal.Length Petal.Width
-1       setosa          1.4         0.2
-2       setosa          1.4         0.2
-3       setosa          1.3         0.2
-4       setosa          1.5         0.2
-5       setosa          1.4         0.2
-6       setosa          1.7         0.4
-7       setosa          1.4         0.3
-8       setosa          1.5         0.2
-9       setosa          1.4         0.2
-10      setosa          1.5         0.1
-11      setosa          1.5         0.2
-12      setosa          1.6         0.2
-13      setosa          1.4         0.1
-14      setosa          1.1         0.1
-15      setosa          1.2         0.2
-16      setosa          1.5         0.4
-17      setosa          1.3         0.4
-18      setosa          1.4         0.3
-19      setosa          1.7         0.3
-20      setosa          1.5         0.3
-21      setosa          1.7         0.2
-22      setosa          1.5         0.4
-23      setosa          1.0         0.2
-24      setosa          1.7         0.5
-25      setosa          1.9         0.2
-26      setosa          1.6         0.2
-27      setosa          1.6         0.4
-28      setosa          1.5         0.2
-29      setosa          1.4         0.2
-30      setosa          1.6         0.2
-31      setosa          1.6         0.2
-32      setosa          1.5         0.4
-33      setosa          1.5         0.1
-34      setosa          1.4         0.2
-35      setosa          1.5         0.2
-36      setosa          1.2         0.2
-37      setosa          1.3         0.2
-38      setosa          1.4         0.1
-39      setosa          1.3         0.2
-40      setosa          1.5         0.2
-41      setosa          1.3         0.3
-42      setosa          1.3         0.3
-43      setosa          1.3         0.2
-44      setosa          1.6         0.6
-45      setosa          1.9         0.4
-46      setosa          1.4         0.3
-47      setosa          1.6         0.2
-48      setosa          1.4         0.2
-49      setosa          1.5         0.2
-50      setosa          1.4         0.2
-51  versicolor          4.7         1.4
-52  versicolor          4.5         1.5
-53  versicolor          4.9         1.5
-54  versicolor          4.0         1.3
-55  versicolor          4.6         1.5
-56  versicolor          4.5         1.3
-57  versicolor          4.7         1.6
-58  versicolor          3.3         1.0
-59  versicolor          4.6         1.3
-60  versicolor          3.9         1.4
-61  versicolor          3.5         1.0
-62  versicolor          4.2         1.5
-63  versicolor          4.0         1.0
-64  versicolor          4.7         1.4
-65  versicolor          3.6         1.3
-66  versicolor          4.4         1.4
-67  versicolor          4.5         1.5
-68  versicolor          4.1         1.0
-69  versicolor          4.5         1.5
-70  versicolor          3.9         1.1
-71  versicolor          4.8         1.8
-72  versicolor          4.0         1.3
-73  versicolor          4.9         1.5
-74  versicolor          4.7         1.2
-75  versicolor          4.3         1.3
-76  versicolor          4.4         1.4
-77  versicolor          4.8         1.4
-78  versicolor          5.0         1.7
-79  versicolor          4.5         1.5
-80  versicolor          3.5         1.0
-81  versicolor          3.8         1.1
-82  versicolor          3.7         1.0
-83  versicolor          3.9         1.2
-84  versicolor          5.1         1.6
-85  versicolor          4.5         1.5
-86  versicolor          4.5         1.6
-87  versicolor          4.7         1.5
-88  versicolor          4.4         1.3
-89  versicolor          4.1         1.3
-90  versicolor          4.0         1.3
-91  versicolor          4.4         1.2
-92  versicolor          4.6         1.4
-93  versicolor          4.0         1.2
-94  versicolor          3.3         1.0
-95  versicolor          4.2         1.3
-96  versicolor          4.2         1.2
-97  versicolor          4.2         1.3
-98  versicolor          4.3         1.3
-99  versicolor          3.0         1.1
-100 versicolor          4.1         1.3
-101  virginica          6.0         2.5
-102  virginica          5.1         1.9
-103  virginica          5.9         2.1
-104  virginica          5.6         1.8
-105  virginica          5.8         2.2
-106  virginica          6.6         2.1
-107  virginica          4.5         1.7
-108  virginica          6.3         1.8
-109  virginica          5.8         1.8
-110  virginica          6.1         2.5
-111  virginica          5.1         2.0
-112  virginica          5.3         1.9
-113  virginica          5.5         2.1
-114  virginica          5.0         2.0
-115  virginica          5.1         2.4
-116  virginica          5.3         2.3
-117  virginica          5.5         1.8
-118  virginica          6.7         2.2
-119  virginica          6.9         2.3
-120  virginica          5.0         1.5
-121  virginica          5.7         2.3
-122  virginica          4.9         2.0
-123  virginica          6.7         2.0
-124  virginica          4.9         1.8
-125  virginica          5.7         2.1
-126  virginica          6.0         1.8
-127  virginica          4.8         1.8
-128  virginica          4.9         1.8
-129  virginica          5.6         2.1
-130  virginica          5.8         1.6
-131  virginica          6.1         1.9
-132  virginica          6.4         2.0
-133  virginica          5.6         2.2
-134  virginica          5.1         1.5
-135  virginica          5.6         1.4
-136  virginica          6.1         2.3
-137  virginica          5.6         2.4
-138  virginica          5.5         1.8
-139  virginica          4.8         1.8
-140  virginica          5.4         2.1
-141  virginica          5.6         2.4
-142  virginica          5.1         2.3
-143  virginica          5.1         1.9
-144  virginica          5.9         2.3
-145  virginica          5.7         2.5
-146  virginica          5.2         2.3
-147  virginica          5.0         1.9
-148  virginica          5.2         2.0
-149  virginica          5.4         2.3
-150  virginica          5.1         1.8</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Species, Petal.Length, Petal.Width)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="creating-new-columns" class="level3">
 <h3 class="anchored" data-anchor-id="creating-new-columns">Creating new columns</h3>
+<p>We can also use <code>dplyr::mutate()</code> to create new columns.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Petal.Ratio =</span> Petal.Length <span class="sc">/</span> Petal.Width</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species Petal.Ratio
-1            5.1         3.5          1.4         0.2     setosa    7.000000
-2            4.9         3.0          1.4         0.2     setosa    7.000000
-3            4.7         3.2          1.3         0.2     setosa    6.500000
-4            4.6         3.1          1.5         0.2     setosa    7.500000
-5            5.0         3.6          1.4         0.2     setosa    7.000000
-6            5.4         3.9          1.7         0.4     setosa    4.250000
-7            4.6         3.4          1.4         0.3     setosa    4.666667
-8            5.0         3.4          1.5         0.2     setosa    7.500000
-9            4.4         2.9          1.4         0.2     setosa    7.000000
-10           4.9         3.1          1.5         0.1     setosa   15.000000
-11           5.4         3.7          1.5         0.2     setosa    7.500000
-12           4.8         3.4          1.6         0.2     setosa    8.000000
-13           4.8         3.0          1.4         0.1     setosa   14.000000
-14           4.3         3.0          1.1         0.1     setosa   11.000000
-15           5.8         4.0          1.2         0.2     setosa    6.000000
-16           5.7         4.4          1.5         0.4     setosa    3.750000
-17           5.4         3.9          1.3         0.4     setosa    3.250000
-18           5.1         3.5          1.4         0.3     setosa    4.666667
-19           5.7         3.8          1.7         0.3     setosa    5.666667
-20           5.1         3.8          1.5         0.3     setosa    5.000000
-21           5.4         3.4          1.7         0.2     setosa    8.500000
-22           5.1         3.7          1.5         0.4     setosa    3.750000
-23           4.6         3.6          1.0         0.2     setosa    5.000000
-24           5.1         3.3          1.7         0.5     setosa    3.400000
-25           4.8         3.4          1.9         0.2     setosa    9.500000
-26           5.0         3.0          1.6         0.2     setosa    8.000000
-27           5.0         3.4          1.6         0.4     setosa    4.000000
-28           5.2         3.5          1.5         0.2     setosa    7.500000
-29           5.2         3.4          1.4         0.2     setosa    7.000000
-30           4.7         3.2          1.6         0.2     setosa    8.000000
-31           4.8         3.1          1.6         0.2     setosa    8.000000
-32           5.4         3.4          1.5         0.4     setosa    3.750000
-33           5.2         4.1          1.5         0.1     setosa   15.000000
-34           5.5         4.2          1.4         0.2     setosa    7.000000
-35           4.9         3.1          1.5         0.2     setosa    7.500000
-36           5.0         3.2          1.2         0.2     setosa    6.000000
-37           5.5         3.5          1.3         0.2     setosa    6.500000
-38           4.9         3.6          1.4         0.1     setosa   14.000000
-39           4.4         3.0          1.3         0.2     setosa    6.500000
-40           5.1         3.4          1.5         0.2     setosa    7.500000
-41           5.0         3.5          1.3         0.3     setosa    4.333333
-42           4.5         2.3          1.3         0.3     setosa    4.333333
-43           4.4         3.2          1.3         0.2     setosa    6.500000
-44           5.0         3.5          1.6         0.6     setosa    2.666667
-45           5.1         3.8          1.9         0.4     setosa    4.750000
-46           4.8         3.0          1.4         0.3     setosa    4.666667
-47           5.1         3.8          1.6         0.2     setosa    8.000000
-48           4.6         3.2          1.4         0.2     setosa    7.000000
-49           5.3         3.7          1.5         0.2     setosa    7.500000
-50           5.0         3.3          1.4         0.2     setosa    7.000000
-51           7.0         3.2          4.7         1.4 versicolor    3.357143
-52           6.4         3.2          4.5         1.5 versicolor    3.000000
-53           6.9         3.1          4.9         1.5 versicolor    3.266667
-54           5.5         2.3          4.0         1.3 versicolor    3.076923
-55           6.5         2.8          4.6         1.5 versicolor    3.066667
-56           5.7         2.8          4.5         1.3 versicolor    3.461538
-57           6.3         3.3          4.7         1.6 versicolor    2.937500
-58           4.9         2.4          3.3         1.0 versicolor    3.300000
-59           6.6         2.9          4.6         1.3 versicolor    3.538462
-60           5.2         2.7          3.9         1.4 versicolor    2.785714
-61           5.0         2.0          3.5         1.0 versicolor    3.500000
-62           5.9         3.0          4.2         1.5 versicolor    2.800000
-63           6.0         2.2          4.0         1.0 versicolor    4.000000
-64           6.1         2.9          4.7         1.4 versicolor    3.357143
-65           5.6         2.9          3.6         1.3 versicolor    2.769231
-66           6.7         3.1          4.4         1.4 versicolor    3.142857
-67           5.6         3.0          4.5         1.5 versicolor    3.000000
-68           5.8         2.7          4.1         1.0 versicolor    4.100000
-69           6.2         2.2          4.5         1.5 versicolor    3.000000
-70           5.6         2.5          3.9         1.1 versicolor    3.545455
-71           5.9         3.2          4.8         1.8 versicolor    2.666667
-72           6.1         2.8          4.0         1.3 versicolor    3.076923
-73           6.3         2.5          4.9         1.5 versicolor    3.266667
-74           6.1         2.8          4.7         1.2 versicolor    3.916667
-75           6.4         2.9          4.3         1.3 versicolor    3.307692
-76           6.6         3.0          4.4         1.4 versicolor    3.142857
-77           6.8         2.8          4.8         1.4 versicolor    3.428571
-78           6.7         3.0          5.0         1.7 versicolor    2.941176
-79           6.0         2.9          4.5         1.5 versicolor    3.000000
-80           5.7         2.6          3.5         1.0 versicolor    3.500000
-81           5.5         2.4          3.8         1.1 versicolor    3.454545
-82           5.5         2.4          3.7         1.0 versicolor    3.700000
-83           5.8         2.7          3.9         1.2 versicolor    3.250000
-84           6.0         2.7          5.1         1.6 versicolor    3.187500
-85           5.4         3.0          4.5         1.5 versicolor    3.000000
-86           6.0         3.4          4.5         1.6 versicolor    2.812500
-87           6.7         3.1          4.7         1.5 versicolor    3.133333
-88           6.3         2.3          4.4         1.3 versicolor    3.384615
-89           5.6         3.0          4.1         1.3 versicolor    3.153846
-90           5.5         2.5          4.0         1.3 versicolor    3.076923
-91           5.5         2.6          4.4         1.2 versicolor    3.666667
-92           6.1         3.0          4.6         1.4 versicolor    3.285714
-93           5.8         2.6          4.0         1.2 versicolor    3.333333
-94           5.0         2.3          3.3         1.0 versicolor    3.300000
-95           5.6         2.7          4.2         1.3 versicolor    3.230769
-96           5.7         3.0          4.2         1.2 versicolor    3.500000
-97           5.7         2.9          4.2         1.3 versicolor    3.230769
-98           6.2         2.9          4.3         1.3 versicolor    3.307692
-99           5.1         2.5          3.0         1.1 versicolor    2.727273
-100          5.7         2.8          4.1         1.3 versicolor    3.153846
-101          6.3         3.3          6.0         2.5  virginica    2.400000
-102          5.8         2.7          5.1         1.9  virginica    2.684211
-103          7.1         3.0          5.9         2.1  virginica    2.809524
-104          6.3         2.9          5.6         1.8  virginica    3.111111
-105          6.5         3.0          5.8         2.2  virginica    2.636364
-106          7.6         3.0          6.6         2.1  virginica    3.142857
-107          4.9         2.5          4.5         1.7  virginica    2.647059
-108          7.3         2.9          6.3         1.8  virginica    3.500000
-109          6.7         2.5          5.8         1.8  virginica    3.222222
-110          7.2         3.6          6.1         2.5  virginica    2.440000
-111          6.5         3.2          5.1         2.0  virginica    2.550000
-112          6.4         2.7          5.3         1.9  virginica    2.789474
-113          6.8         3.0          5.5         2.1  virginica    2.619048
-114          5.7         2.5          5.0         2.0  virginica    2.500000
-115          5.8         2.8          5.1         2.4  virginica    2.125000
-116          6.4         3.2          5.3         2.3  virginica    2.304348
-117          6.5         3.0          5.5         1.8  virginica    3.055556
-118          7.7         3.8          6.7         2.2  virginica    3.045455
-119          7.7         2.6          6.9         2.3  virginica    3.000000
-120          6.0         2.2          5.0         1.5  virginica    3.333333
-121          6.9         3.2          5.7         2.3  virginica    2.478261
-122          5.6         2.8          4.9         2.0  virginica    2.450000
-123          7.7         2.8          6.7         2.0  virginica    3.350000
-124          6.3         2.7          4.9         1.8  virginica    2.722222
-125          6.7         3.3          5.7         2.1  virginica    2.714286
-126          7.2         3.2          6.0         1.8  virginica    3.333333
-127          6.2         2.8          4.8         1.8  virginica    2.666667
-128          6.1         3.0          4.9         1.8  virginica    2.722222
-129          6.4         2.8          5.6         2.1  virginica    2.666667
-130          7.2         3.0          5.8         1.6  virginica    3.625000
-131          7.4         2.8          6.1         1.9  virginica    3.210526
-132          7.9         3.8          6.4         2.0  virginica    3.200000
-133          6.4         2.8          5.6         2.2  virginica    2.545455
-134          6.3         2.8          5.1         1.5  virginica    3.400000
-135          6.1         2.6          5.6         1.4  virginica    4.000000
-136          7.7         3.0          6.1         2.3  virginica    2.652174
-137          6.3         3.4          5.6         2.4  virginica    2.333333
-138          6.4         3.1          5.5         1.8  virginica    3.055556
-139          6.0         3.0          4.8         1.8  virginica    2.666667
-140          6.9         3.1          5.4         2.1  virginica    2.571429
-141          6.7         3.1          5.6         2.4  virginica    2.333333
-142          6.9         3.1          5.1         2.3  virginica    2.217391
-143          5.8         2.7          5.1         1.9  virginica    2.684211
-144          6.8         3.2          5.9         2.3  virginica    2.565217
-145          6.7         3.3          5.7         2.5  virginica    2.280000
-146          6.7         3.0          5.2         2.3  virginica    2.260870
-147          6.3         2.5          5.0         1.9  virginica    2.631579
-148          6.5         3.0          5.2         2.0  virginica    2.600000
-149          6.2         3.4          5.4         2.3  virginica    2.347826
-150          5.9         3.0          5.1         1.8  virginica    2.833333</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Petal.Ratio =</span> Petal.Length <span class="sc">/</span> Petal.Width</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="grouping-and-summarising" class="level3">
-<h3 class="anchored" data-anchor-id="grouping-and-summarising">Grouping and summarising</h3>
+<section id="exercise-4" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
+<p>What is the difference between these two codes?</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_petal_length =</span> <span class="fu">mean</span>(Petal.Length),</span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_petal_width =</span> <span class="fu">mean</span>(Petal.Width),</span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> dplyr<span class="sc">::</span><span class="fu">n</span>()</span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 4
-  Species    mean_petal_length mean_petal_width     n
-  &lt;fct&gt;                  &lt;dbl&gt;            &lt;dbl&gt; &lt;int&gt;
-1 setosa                  1.46            0.246    50
-2 versicolor              4.26            1.33     50
-3 virginica               5.55            2.03     50</code></pre>
-</div>
-</div>
-</section>
-<section id="exercise-3" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-3">Exercise 3</h3>
-<p>Using tidyverse, calculate the mean <code>Sepal.Length</code> and mean <code>Petal.Length</code> for each species.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_sepal_length =</span> <span class="fu">mean</span>(Sepal.Length),</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_petal_length =</span> <span class="fu">mean</span>(Petal.Length)</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  Species    mean_sepal_length mean_petal_length
-  &lt;fct&gt;                  &lt;dbl&gt;             &lt;dbl&gt;
-1 setosa                  5.01              1.46
-2 versicolor              5.94              4.26
-3 virginica               6.59              5.55</code></pre>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code 1:</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>iris[,<span class="dv">6</span>] <span class="ot">&lt;-</span> iris<span class="sc">$</span>Petal.Length <span class="sc">/</span> iris<span class="sc">$</span>Petal.Width</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(iris)[<span class="dv">6</span>] <span class="ot">&lt;-</span> <span class="st">"Petal.Ratio"</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># code 2:</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Petal.Ratio =</span> Petal.Length <span class="sc">/</span> Petal.Width</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
 <section id="plotting-with-ggplot2" class="level2">
-<h2 class="anchored" data-anchor-id="plotting-with-ggplot2">4. Plotting with ggplot2</h2>
+<h2 class="anchored" data-anchor-id="plotting-with-ggplot2">6. Plotting with ggplot2</h2>
 <p><code>ggplot2</code> builds plots in layers.</p>
 <p>The basic structure is:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="sc">/</span><span class="er">*</span> This block is shown as text only. Do not run it. <span class="sc">*</span><span class="er">/</span></span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> variable1, <span class="at">y =</span> variable2)) <span class="sc">+</span></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_something</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><em>ggplot(data, aes(x = variable1, y = variable2)) +</em> <em>geom_something()</em></p>
 <section id="a-basic-scatter-plot" class="level3">
 <h3 class="anchored" data-anchor-id="a-basic-scatter-plot">A basic scatter plot</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width)) <span class="sc">+</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1347,167 +458,8 @@ Levels: setosa versicolor virginica</code></pre>
 <section id="color-points-by-species" class="level3">
 <h3 class="anchored" data-anchor-id="color-points-by-species">Color points by species</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="improve-the-plot-appearance" class="level3">
-<h3 class="anchored" data-anchor-id="improve-the-plot-appearance">Improve the plot appearance</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Petal measurements in iris species"</span>,</span>
-<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Petal length"</span>,</span>
-<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Petal width"</span>,</span>
-<span id="cb67-7"><a href="#cb67-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Species"</span></span>
-<span id="cb67-8"><a href="#cb67-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb67-9"><a href="#cb67-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="a-boxplot" class="level3">
-<h3 class="anchored" data-anchor-id="a-boxplot">A boxplot</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Petal length differs between iris species"</span>,</span>
-<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Species"</span>,</span>
-<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Petal length"</span></span>
-<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="combining-tidyverse-and-ggplot2" class="level3">
-<h3 class="anchored" data-anchor-id="combining-tidyverse-and-ggplot2">Combining tidyverse and ggplot2</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Species <span class="sc">!=</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="exercise-4" class="level3">
-<h3 class="anchored" data-anchor-id="exercise-4">Exercise 4</h3>
-<p>Make a scatter plot with:</p>
-<ol type="1">
-<li><code>Sepal.Length</code> on the x-axis.</li>
-<li><code>Sepal.Width</code> on the y-axis.</li>
-<li>Points colored by <code>Species</code>.</li>
-<li>A clean theme using <code>theme_bw()</code>.</li>
-<li>Clear axis labels.</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sepal length"</span>,</span>
-<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Sepal width"</span>,</span>
-<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Species"</span></span>
-<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="saving-a-plot" class="level2">
-<h2 class="anchored" data-anchor-id="saving-a-plot">5. Saving a plot</h2>
-<p>First, save the plot as an object.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Petal measurements in iris species"</span>,</span>
-<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Petal length"</span>,</span>
-<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Petal width"</span>,</span>
-<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Species"</span></span>
-<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
-<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Then save it with <code>ggsave()</code>.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"iris_petal_plot.png"</span>, p, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="final-challenge" class="level2">
-<h2 class="anchored" data-anchor-id="final-challenge">6. Final challenge</h2>
-<p>Complete the following workflow:</p>
-<ol type="1">
-<li>Remove <code>setosa</code>.</li>
-<li>Create a new column called <code>Petal.Ratio</code>, calculated as <code>Petal.Length / Petal.Width</code>.</li>
-<li>Calculate the mean <code>Petal.Ratio</code> for each species.</li>
-<li>Make a boxplot of <code>Petal.Ratio</code> by species.</li>
-</ol>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>iris_df2 <span class="ot">&lt;-</span> iris_df <span class="sc">%&gt;%</span></span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Species <span class="sc">!=</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(</span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Petal.Ratio =</span> Petal.Length <span class="sc">/</span> Petal.Width</span>
-<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>iris_df2 <span class="sc">%&gt;%</span></span>
-<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span></span>
-<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(</span>
-<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_petal_ratio =</span> <span class="fu">mean</span>(Petal.Ratio)</span>
-<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 2
-  Species    mean_petal_ratio
-  &lt;fct&gt;                 &lt;dbl&gt;
-1 versicolor             3.24
-2 virginica              2.78</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(iris_df2, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Ratio, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Species"</span>,</span>
-<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Petal length / petal width"</span></span>
-<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1517,15 +469,140 @@ Levels: setosa versicolor virginica</code></pre>
 </div>
 </div>
 </section>
-<section id="key-take-home-messages" class="level2">
-<h2 class="anchored" data-anchor-id="key-take-home-messages">7. Key take-home messages</h2>
+<section id="improve-the-plot-appearance" class="level3">
+<h3 class="anchored" data-anchor-id="improve-the-plot-appearance">Improve the plot appearance</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Petal measurements in iris species"</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Petal length"</span>,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Petal width"</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Species"</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="a-boxplot" class="level3">
+<h3 class="anchored" data-anchor-id="a-boxplot">A boxplot</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> Petal.Length, <span class="at">fill =</span> Species)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Petal length differs between iris species"</span>,</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Species"</span>,</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Petal length"</span></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="combining-dplyr-and-ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="combining-dplyr-and-ggplot2">Combining dplyr and ggplot2</h3>
+<p>We can plot a subset of a data frame by using <code>dplyr</code> and <code>ggplot2</code> together (without creating a new data frame).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Species <span class="sc">!=</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5" class="level3">
+<h3 class="anchored" data-anchor-id="exercise-5">Exercise 5</h3>
+<p>Make a scatter plot with:</p>
+<ol type="1">
+<li><code>Sepal.Length</code> on the x-axis.</li>
+<li><code>Sepal.Width</code> on the y-axis.</li>
+<li>Points colored by <code>Species</code>.</li>
+<li>A clean theme using <code>theme_bw()</code>.</li>
+<li>Clear axis labels.</li>
+</ol>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length, <span class="at">y =</span> Sepal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Sepal length"</span>,</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Sepal width"</span>,</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Species"</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="saving-a-plot" class="level2">
+<h2 class="anchored" data-anchor-id="saving-a-plot">7. Saving a plot</h2>
+<p>Finally, we want to save our plot.</p>
+<p>To do that, we can first save the plot as an object.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> iris_df, <span class="fu">aes</span>(<span class="at">x =</span> Petal.Length, <span class="at">y =</span> Petal.Width, <span class="at">color =</span> Species)) <span class="sc">+</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Petal measurements in iris species"</span>,</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Petal length"</span>,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Petal width"</span>,</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Species"</span></span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Then, we can save it using <code>ggsave()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> <span class="st">"iris_petal_plot.png"</span>, <span class="at">plot =</span> p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">8. Resources</h2>
 <ul>
-<li>R stores information in objects.</li>
-<li>Most R work involves creating, modifying, and plotting data frames.</li>
-<li>Base R is useful for understanding the structure of R.</li>
-<li>Tidyverse makes many data manipulation tasks easier to read.</li>
-<li><code>ggplot2</code> builds figures by adding layers.</li>
-<li>You do not need to memorize everything. You need to understand the structure and know how to adapt examples.</li>
+<li><a href="https://rstudio.github.io/cheatsheets/">Posit Cheat Sheets</a><br>
+</li>
+<li><a href="https://opensource.posit.co/resources/cheatsheets/">RStudio / Posit Cheat Sheets collection</a></li>
+<li><a href="https://r-graph-gallery.com/cheatsheets">R Graph Gallery cheat sheets</a><br>
+</li>
+<li><a href="https://stackoverflow.com">Stack Overflow</a><br>
+</li>
+<li><a href="https://www.bioinformatics.babraham.ac.uk/training.html">Babraham Bioinformatics courses</a><br>
+</li>
+<li><a href="sthda.com/english/">Statistical Tools for High-throughput Data Analysis</a></li>
+<li><a href="https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf">Base-R cheat sheet</a></li>
 </ul>
 
 

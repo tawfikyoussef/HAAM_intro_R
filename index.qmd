@@ -4,7 +4,7 @@ author: "Youssef Tawfik"
 format:
   html:
     toc: true
-    toc-depth: 2
+    toc-depth: 3
     code-fold: false
     code-tools: false
 editor: visual
@@ -14,7 +14,7 @@ execute:
   message: false
 ---
 
-## Workshop goals
+## 1. Objectives
 
 By the end of this session, you should be able to:
 
@@ -22,17 +22,28 @@ By the end of this session, you should be able to:
 2.  Understand objects, functions, vectors, and data frames.
 3.  Inspect and subset a dataset using base R.
 4.  Read (load) and write (save) files/datasets.
-5.  Use basic `dplyr` commands to filter, select, mutate, group, and summarise data.
-6.  Create simple plots using `ggplot2`.
+5.  Use basic `dplyr` commands to filter and subset data.
+6.  Create plots using `ggplot2`.
 7.  Save a plot as an image file.
 
-We will use the built-in `iris` dataset, so no external data files are needed.
+## 2. Getting started with R & RStudio
 
-## 1. Getting started with R
+### What is R?
+
+R is a language and environment for statistical programming which includes statistical computing and graphics.
+
+### RStudio
+
+It is an integrated development environment (IDE) for the R programming language.
+
+*We will now open RStudio and learn how to navigate it and use R in it.*
+
+### Working in RStudio
 
 R can be used like a calculator.
 
 ```{r}
+#| output: false
 2 + 2
 10 / 2
 sqrt(25)
@@ -41,7 +52,7 @@ sqrt(25)
 We can save values as objects using `<-`.
 
 ```{r}
-
+#| output: false
 x <- 10
 x
 
@@ -51,59 +62,91 @@ x + 5
 A vector is a collection of values.
 
 ```{r}
+#| output: false
 numbers <- c(1, 2, 3, 4, 5)
 numbers
+```
 
+A function is a command with input(s).
+
+```{r}
+#| output: false
 mean(numbers)
 sd(numbers)
 length(numbers)
 ```
 
-### Exercise 1
-
-Create a vector called `ages` containing five ages. Then calculate the mean age.
+You can check what a function does, what kind of input it requires, and what kind of output it produces using `?`
 
 ```{r}
-ages <- c(18, 21, 25, 30, 34)
-mean(ages)
+#| output: false
+?mean
+```
+
+### Exercise 1
+
+Now, create a vector called `ages` containing the values: 18, 22, 26, 28, 32. Calculate the mean age.
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| output: false
+
+ages <- c(18, 22, 26, 28, 32)
+mean(ages) # = 25.2
 
 ```
 
-## 2. Working with a data frame
+## 3. Working with a data frame
 
-A data frame is a table. Rows are observations and columns are variables.
+You can think of a data frame as a table with rows (observations) and columns (variables).
 
-We will use the built-in `iris` dataset.
+We will use the built-in `iris` dataset. We will first load it:
 
 ```{r}
+#| output: false
+
 data(iris)
 ```
 
-Inspect the dataset.
+Now, let's inspect the dataset.
 
 ```{r}
+#| output: false
+
+# show the first few lines
 head(iris)
+# show structure of the data frame
 str(iris)
+# show summary of the data frame
 summary(iris)
+# show dimmensions of the data frame
 dim(iris)
+# show the column names of the data frame
 colnames(iris)
 ```
 
 The dataset has measurements from three iris species.
 
 ```{r}
+#| output: false
+
 unique(iris$Species)
 ```
 
 We can access one column using `$`.
 
 ```{r}
+#| output: false
+
 iris$Petal.Length
 ```
 
 We can subset rows and columns using square brackets.
 
 ```{r}
+#| output: false
+
 # First five rows
 iris[1:5, ]
 
@@ -117,21 +160,89 @@ iris[iris$Petal.Length > 5, ]
 iris[, c("Species", "Petal.Length", "Petal.Width")]
 ```
 
+We can also add new columns to our data frame.
+
+```{r}
+#| output: false
+
+iris[,6] <- iris$Petal.Length / iris$Petal.Width
+```
+
+We can check and/or change column names of a data frame using `colnames()`.
+
+```{r}
+#| output: false
+
+colnames(iris)
+
+colnames(iris)[6] <- "Petal.Ratio"
+```
+
 ### Exercise 2
 
-Using base R:
-
 1.  Show only rows where `Species` is `versicolor`.
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| output: false
+
+iris[iris$Species == "versicolor", ]
+
+```
+
 2.  Show only the columns `Sepal.Length`, `Petal.Length`, and `Species`.
 
 ```{r}
-iris[iris$Species == "versicolor", ]
+#| code-fold: true
+#| code-summary: "Show the code"
+#| output: false
 
 iris[, c("Sepal.Length", "Petal.Length", "Species")]
 
 ```
 
-## 3. Data manipulation with tidyverse
+## 4. Reading (loading) and writing (saving) files
+
+When using R, we will always have input files that need to be loaded and/or output files that need to be saved.
+
+We will copy `iris` into an object called `iris_df`.
+
+```{r}
+#| output: false
+
+iris_df <- iris
+```
+
+You should always know where you are. We use `getwd()` to know current directory (folder) we are in.
+
+We use `setwd()` to set a new working directory (folder) to work in.
+
+```{r}
+#| eval: false
+setwd("/vol/volume/intro-to-r/")
+```
+
+We can check files inside current working directory using `list.files()`
+
+Let's now save the `iris` data frame into a text file.
+
+```{r}
+#| eval: false
+
+write_tsv(x = iris_df, file = "iris_df.tsv")
+```
+
+Now, let's remove the current *iris_df* and try to read (load) it from our working directory.
+
+```{r}
+#| eval: false
+
+rm(iris_df)
+iris_df <- read_tsv("iris_df.tsv")
+```
+
+
+## 5. Data manipulation with tidyverse
 
 The tidyverse is a collection of R packages for data manipulation and plotting.
 
@@ -139,84 +250,92 @@ The tidyverse is a collection of R packages for data manipulation and plotting.
 library(tidyverse)
 ```
 
-For this workshop, we will copy `iris` into an object called `iris_df`.
+Let's again print the first lines of the iris data frame.
 
 ```{r}
-iris_df <- iris
+#| output: false
+
+head(iris_df)
 ```
 
-The pipe `%>%` can be read as "then".
+We can also use the pipe `%>%` (which can be read as "then"). The syntax is simple: *object* `%>%` *function*
 
 ```{r}
+#| output: false
+
 iris_df %>%
   head()
 ```
 
 ### Filtering rows
 
-```{r}
-iris_df %>%
-  dplyr::filter(Species == "setosa")
-```
+We use `dplyr::filter()` and indicate what we want to subset our data frame with. 
 
 ```{r}
+#| output: false
+
+# Filter by specific value
+iris_df %>%
+  dplyr::filter(Species == "setosa")
+# Filter by range
 iris_df %>%
   dplyr::filter(Petal.Length > 5)
 ```
 
-### Selecting columns
+### Selecting specific columns
+
+We use `dplyr::select()` and indicate which columns we want to subset from our data frame.
 
 ```{r}
+#| output: false
+
 iris_df %>%
   dplyr::select(Species, Petal.Length, Petal.Width)
 ```
 
 ### Creating new columns
 
+We can also use `dplyr::mutate()` to create new columns.
+
 ```{r}
+#| output: false
+
 iris_df %>%
   dplyr::mutate(
     Petal.Ratio = Petal.Length / Petal.Width
   )
 ```
 
-### Grouping and summarising
+### Exercise 4
+
+What is the difference between these two codes?
 
 ```{r}
+#| output: false
+
+# code 1:
+iris[,6] <- iris$Petal.Length / iris$Petal.Width
+colnames(iris)
+
+colnames(iris)[6] <- "Petal.Ratio"
+
+# code 2:
 iris_df %>%
-  dplyr::group_by(Species) %>%
-  dplyr::summarise(
-    mean_petal_length = mean(Petal.Length),
-    mean_petal_width = mean(Petal.Width),
-    n = dplyr::n()
-  )
-```
-
-### Exercise 3
-
-Using tidyverse, calculate the mean `Sepal.Length` and mean `Petal.Length` for each species.
-
-```{r}
-iris_df %>%
-  dplyr::group_by(Species) %>%
-  dplyr::summarise(
-    mean_sepal_length = mean(Sepal.Length),
-    mean_petal_length = mean(Petal.Length)
-  )
+  dplyr::mutate(
+    Petal.Ratio = Petal.Length / Petal.Width
+    )
 
 ```
 
-## 4. Plotting with ggplot2
+## 6. Plotting with ggplot2
 
 `ggplot2` builds plots in layers.
 
 The basic structure is:
 
-``` r
-/* This block is shown as text only. Do not run it. */
-ggplot(data, aes(x = variable1, y = variable2)) +
-  geom_something()
-```
+
+*ggplot(data, aes(x = variable1, y = variable2)) +*
+  *geom_something()*
 
 ### A basic scatter plot
 
@@ -259,7 +378,9 @@ ggplot(data = iris_df, aes(x = Species, y = Petal.Length, fill = Species)) +
   theme_bw()
 ```
 
-### Combining tidyverse and ggplot2
+### Combining dplyr and ggplot2
+
+We can plot a subset of a data frame by using `dplyr` and `ggplot2` together (without creating a new data frame).
 
 ```{r}
 iris_df %>%
@@ -269,7 +390,7 @@ iris_df %>%
   theme_bw()
 ```
 
-### Exercise 4
+### Exercise 5
 
 Make a scatter plot with:
 
@@ -280,6 +401,9 @@ Make a scatter plot with:
 5.  Clear axis labels.
 
 ```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
 ggplot(data = iris_df, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
   geom_point(size = 3) +
   labs(
@@ -291,9 +415,11 @@ ggplot(data = iris_df, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) 
 
 ```
 
-## 5. Saving a plot
+## 7. Saving a plot
 
-First, save the plot as an object.
+Finally, we want to save our plot.
+
+To do that, we can first save the plot as an object.
 
 ```{r}
 p <- ggplot(data = iris_df, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
@@ -309,49 +435,20 @@ p <- ggplot(data = iris_df, aes(x = Petal.Length, y = Petal.Width, color = Speci
 p
 ```
 
-Then save it with `ggsave()`.
+Then, we can save it using `ggsave()`.
 
 ```{r}
-ggsave("iris_petal_plot.png", p, width = 6, height = 4, dpi = 300)
+#| eval: false
+ggsave(filename = "iris_petal_plot.png", plot = p)
 ```
 
-## 6. Final challenge
+## 8. Resources
 
-Complete the following workflow:
+-   [Posit Cheat Sheets](https://rstudio.github.io/cheatsheets/)  
+-   [RStudio / Posit Cheat Sheets collection](https://opensource.posit.co/resources/cheatsheets/) 
+-   [R Graph Gallery cheat sheets](https://r-graph-gallery.com/cheatsheets)  
+-   [Stack Overflow](https://stackoverflow.com)  
+-   [Babraham Bioinformatics courses](https://www.bioinformatics.babraham.ac.uk/training.html)  
+-   [Statistical Tools for High-throughput Data Analysis](sthda.com/english/)
+-   [Base-R cheat sheet](https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf)
 
-1.  Remove `setosa`.
-2.  Create a new column called `Petal.Ratio`, calculated as `Petal.Length / Petal.Width`.
-3.  Calculate the mean `Petal.Ratio` for each species.
-4.  Make a boxplot of `Petal.Ratio` by species.
-
-```{r}
-iris_df2 <- iris_df %>%
-  dplyr::filter(Species != "setosa") %>%
-  dplyr::mutate(
-    Petal.Ratio = Petal.Length / Petal.Width
-  )
-
-iris_df2 %>%
-  dplyr::group_by(Species) %>%
-  dplyr::summarise(
-    mean_petal_ratio = mean(Petal.Ratio)
-  )
-
-ggplot(iris_df2, aes(x = Species, y = Petal.Ratio, fill = Species)) +
-  geom_boxplot() +
-  labs(
-    x = "Species",
-    y = "Petal length / petal width"
-  ) +
-  theme_bw()
-
-```
-
-## 7. Key take-home messages
-
--   R stores information in objects.
--   Most R work involves creating, modifying, and plotting data frames.
--   Base R is useful for understanding the structure of R.
--   Tidyverse makes many data manipulation tasks easier to read.
--   `ggplot2` builds figures by adding layers.
--   You do not need to memorize everything. You need to understand the structure and know how to adapt examples.
