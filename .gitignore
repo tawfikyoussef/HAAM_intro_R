@@ -3,7 +3,6 @@ iris_petal_plot.png
 .RData
 .Rproj.user/
 .DS_Store
-*.html
 *_files/
 outputs/
 /.quarto/
