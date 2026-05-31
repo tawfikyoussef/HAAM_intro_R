@@ -1,3 +1,10 @@
-HAAM_intro_to_R.html
-HAAM_intro_to_R_files
 iris_petal_plot.png
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+*.html
+*_files/
+outputs/
+/.quarto/
+**/*.quarto_ipynb

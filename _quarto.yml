@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Introduction to R"
+  navbar:
+    left:
+      - href: HAAM_intro_to_R.qmd
+        text: Workshop
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: false
+    code-tools: true
+
+execute:
+  warning: false
+  message: false
