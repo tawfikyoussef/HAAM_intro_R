@@ -4,9 +4,10 @@ project:
 
 website:
   title: "Introduction to R"
+  page-navigation: true
   navbar:
     left:
-      - href: HAAM_intro_to_R.qmd
+      - href: index.qmd
         text: Workshop
 
 format:
